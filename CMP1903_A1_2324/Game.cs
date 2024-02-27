@@ -17,5 +17,23 @@ namespace CMP1903_A1_2324
 
         //Methods
 
+        Die D1 = new Die();
+        Die D2 = new Die();
+        Die D3 = new Die();
+
+        //Console.WriteLine($"Die 1 = {R1} Die 2 = {R2} Die 3 = {R3}");
+
+        public int StartGame()
+        {
+            int R1 = D1.Roll();
+            int R2 = D2.Roll();
+            int R3 = D3.Roll();
+
+            int sum =  R1+ R2+ R3;
+            Console.WriteLine($"Sum is = {sum}");
+            Console.WriteLine($"Die 1 = {R1} Die 2 = {R2} Die 3 = {R3}");
+
+            return sum;
+        }
     }
 }

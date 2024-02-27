@@ -14,9 +14,14 @@ namespace CMP1903_A1_2324
          */
 
         //Property
-
+        private int _DieCurVal;
+        private static Random _RandNum = new Random();
 
         //Method
-
+        public int Roll()
+        {
+            _DieCurVal = _RandNum.Next(1, 7);
+            return _DieCurVal;
+        }
     }
 }
