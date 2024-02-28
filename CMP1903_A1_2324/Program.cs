@@ -15,11 +15,12 @@ namespace CMP1903_A1_2324
              * Create a Game object and call its methods.
              * Create a Testing object to verify the output and operation of the other classes.
              */
-            Game G1 = new Game();
-            int GS1 = G1.StartGame();
 
-            Console.WriteLine(GS1);
-            Console.ReadLine();
+            Game Game1 = new Game(); //object instantiation
+            int gameStart1 = Game1.StartGame();
+
+            Console.WriteLine($"Sum is = {gameStart1}");
+            Console.ReadLine(); //Can be deleted, placeholder to keep console open
         }
     }
 }
