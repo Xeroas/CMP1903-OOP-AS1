@@ -15,12 +15,11 @@ namespace CMP1903_A1_2324
          * rolls could be continous, and the totals and other statistics could be summarised for example.
          */
 
-
         Die die1 = new Die();
         Die die2 = new Die();
         Die die3 = new Die();
 
-        public int StartGame() //Method
+        public (int, int, int, int) StartGame() //Method
         {
             int roll1 = die1.Roll();
             int roll2 = die2.Roll();
@@ -29,7 +28,7 @@ namespace CMP1903_A1_2324
             int sum = roll1 + roll2 + roll3;
             Console.WriteLine($"Die 1 = {roll1} \nDie 2 = {roll2} \nDie 3 = {roll3}");
 
-            return sum;
+            return (sum, roll1, roll2, roll3);
         }
     }
 }

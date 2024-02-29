@@ -17,9 +17,14 @@ namespace CMP1903_A1_2324
              */
 
             Game Game1 = new Game(); //object instantiation
-            int gameStart1 = Game1.StartGame();
+            var gameStart1 = Game1.StartGame();
 
-            Console.WriteLine($"Sum is = {gameStart1}");
+            Console.WriteLine($"Sum is = {gameStart1.Item1} \n----------------------------");
+
+            Testing test1 = new Testing();
+            test1.test();
+            Console.WriteLine("Testing complete");
+
             Console.ReadLine(); //Can be deleted, placeholder to keep console open
         }
     }
