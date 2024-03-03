@@ -15,20 +15,25 @@ namespace CMP1903_A1_2324
          * rolls could be continous, and the totals and other statistics could be summarised for example.
          */
 
-        Die die1 = new Die();
+        /// <summary>
+        /// The "Game" class contains the code relevant for generating the die game, in this case that is the instantiation and rolling of the three dies
+        /// along with summing of their values. The method "StartGame" which is responsible for rolling the dies and summing them returns the die values and their sum.
+        /// </summary> 
+
+        Die die1 = new Die(); //Dies are instantiated here.
         Die die2 = new Die();
         Die die3 = new Die();
 
-        public (int, int, int, int) StartGame() //Method
+        public (int, int, int, int) StartGame() //"StartGame" Method responsible for rolling the dies, summing them and returning the sum along with die values.
         {
-            int roll1 = die1.Roll();
+            int roll1 = die1.Roll(); //Roll the dies using the "Roll" method from "Die" class.
             int roll2 = die2.Roll();
             int roll3 = die3.Roll();
 
-            int sum = roll1 + roll2 + roll3;
-            Console.WriteLine($"Die 1 = {roll1} \nDie 2 = {roll2} \nDie 3 = {roll3}");
+            int sum = roll1 + roll2 + roll3; //Summing of the three dies.
+            Console.WriteLine($"Die 1 = {roll1} \nDie 2 = {roll2} \nDie 3 = {roll3}"); //Output Die values (User readable)
 
-            return (sum, roll1, roll2, roll3);
+            return (sum, roll1, roll2, roll3); //Returning the sum of the dies, and the individual die values.
         }
     }
 }

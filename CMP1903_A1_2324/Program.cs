@@ -16,16 +16,31 @@ namespace CMP1903_A1_2324
              * Create a Testing object to verify the output and operation of the other classes.
              */
 
-            Game Game1 = new Game(); //object instantiation
-            var gameStart1 = Game1.StartGame();
+            /// <summary>
+            /// The "Program" class contains the code to be ran by the program, in this case it includes the "Testing" method and "Game" method which are both instantiated and executed,
+            /// the Testing is done first and then the game will run in a loop until the user tells it to stop.
+            /// </summary>
 
-            Console.WriteLine($"Sum is = {gameStart1.Item1} \n----------------------------");
 
-            Testing test1 = new Testing();
-            test1.test();
-            Console.WriteLine("Testing complete");
+            Game Game1 = new Game(); //Object instantiation, loading "Game" into the program class.
 
-            Console.ReadLine(); //Can be deleted, placeholder to keep console open
+            Testing Test1 = new Testing(); //Object instantiation, loading "Testing" into the program class.
+            Test1.Test(); //Run the testing method
+            Console.WriteLine("-------------------\nTesting complete\n-------------------"); //So long as no errors occur, this line will be output to let the user know testing has completed.
+
+            for (; ; ) //Create a loop which will generate games until told to stop
+            {
+                var gameStart1 = Game1.StartGame(); //Run the "Game" method (Roll three die)
+                Console.WriteLine($"-------------------\nSum is = {gameStart1.Item1}\n-------------------"); ///Output the sum of the three dies (With some ASCII formatting).
+                Console.WriteLine("Enter 'Stop' to stop rolling, enter anything else to continue rolling.");
+                var userInput = Console.ReadLine(); //Take user input to check if they would like to stop rolling or continue.
+                var userInputLower = userInput.ToLower();  //Convert user input to lowercase to prevent erroneous input.
+
+                if (userInputLower == "stop") //If condition which will stop the program if user inputs 'Stop'
+                {
+                    break;
+                }
+            }
         }
     }
 }
